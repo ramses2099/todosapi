@@ -11,7 +11,7 @@ class Todo(models.Model):
     #description
     description = models.CharField(max_length=600)    
     # "userId": 1,
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="user")
     # completed
     completed = models.BooleanField(default=False)
     # created

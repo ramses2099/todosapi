@@ -29,12 +29,12 @@ class TodoAV(APIView):
         
 class TodoDetailsAV(APIView):
     """
-    
+    Todo details, or update and delete
     """
     def get_object(self, pk):
         try:
-            return TodoSerializer.objects.get(pk=pk)
-        except TodoSerializer.DoesNotExist:
+            return Todo.objects.get(pk=pk)
+        except Todo.DoesNotExist:
             raise Http404
 
     def get(self, request, pk, format=None):
